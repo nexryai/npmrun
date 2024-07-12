@@ -55,7 +55,7 @@ fn main() {
     // コマンドライン引数から指定されたスクリプト名を取得
     let args: Vec<String> = env::args().collect();
     if args.len() < 2 {
-        eprintln!("Usage: {} <filename>", args[0]);
+        eprintln!("Usage: {} <script_name>", args[0]);
         std::process::exit(1);
     }
 
