@@ -16,7 +16,15 @@ fn exec(command: &str) {
     use std::process::Command;
     let mut parts = command.split_whitespace();
     let command = parts.next().unwrap();
-    let args = parts;
+    let mut args = parts;
+
+    // cdコマンドの場合set_current_dirを使う
+    if command == "cd" {
+        let dir = args.next().unwrap();
+        std::env::set_current_dir(dir).expect("Failed to change directory");
+        return;
+    }
+
     let status = Command::new(command)
         .args(args)
         .status()
