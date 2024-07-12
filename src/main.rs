@@ -35,7 +35,7 @@ fn exec(command: &str) {
     }
 }
 
-// コマンドを&&でつないで実行する
+// &&で連結したコマンドを分割して実行する
 fn exec_commands(commands: &str) {
     println!("Running commands: {}", commands);
 
